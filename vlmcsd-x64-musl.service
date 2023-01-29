@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=forking
 PIDFile=/var/run/vlmcsd-x64-musl.pid
-ExecStart=/opt/binaries/Linux/intel/static/vlmcsd-x64-musl-static -p /var/run/vlmcsd-x64-musl.pid
+ExecStart=/opt/vlmcsd/vlmcsd-x64-musl-static -p /var/run/vlmcsd-x64-musl.pid
 ExecStop=/bin/kill -HUP $MAINPID
 PrivateTmp=true
 

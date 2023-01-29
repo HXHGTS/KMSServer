@@ -1,26 +1,13 @@
 [Unit]
-Description=vlmcsd-x64-musl: KMS Server
-ConditionFileIsExecutable=/opt/binaries/Linux/intel/static/vlmcsd-x64-musl-static
-
-After=syslog.target network-online.target 
+Description=KMS Server By vlmcsd
+After=network.target
 
 [Service]
-StartLimitInterval=5
-StartLimitBurst=10
-ExecStartPre=/bin/mkdir -p /var/log/
-ExecStart=/opt/binaries/Linux/intel/static/vlmcsd-x64-musl-static
-
-WorkingDirectory=/opt/binaries/Linux/intel/static
-
-
-
-StandardOutput=file:/var/log/vlmcsd.out
-StandardError=file:/var/log/vlmcsd.err
-
-Restart=always
-
-RestartSec=10
-EnvironmentFile=-/etc/sysconfig/vlmcsd
+Type=forking
+PIDFile=/var/run/vlmcsd-x64-musl.pid
+ExecStart=/opt/binaries/Linux/intel/static/vlmcsd-x64-musl-static -p /var/run/vlmcsd-x64-musl.pid
+ExecStop=/bin/kill -HUP $MAINPID
+PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target

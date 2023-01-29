@@ -1,5 +1,5 @@
 [Unit]
-Description=vlmcsd
+Description=vlmcsd-x64-musl
 After=network.target
 
 [Service]

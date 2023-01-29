@@ -18,6 +18,8 @@ curl https://raw.githubusercontent.com/HXHGTS/KMSServer/main/vlmcsd-x64-musl.ser
 
 systemctl daemon-reload
 
+systemctl enable vlmcsd-x64-musl
+
 systemctl start vlmcsd-x64-musl
 
 echo "KMS服务器已安装！"

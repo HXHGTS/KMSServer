@@ -6,7 +6,7 @@ systemctl stop vlmcsd-x64-musl
 
 systemctl disable vlmcsd-x64-musl
 
-rm -rf /opt/binaries
+rm -rf /opt/vlmcsd
 
 echo "正在下载vlmcsd. . ."
 
@@ -20,7 +20,11 @@ cd /opt
 
 tar -zvxf binaries.tar.gz
 
-rm -rf binaries.tar.gz
+mkdir /opt/vlmcsd
+
+mv -f /opt/binaries/Linux/intel/static/vlmcsd-x64-musl-static /opt/vlmcsd/vlmcsd-x64-musl-static
+
+rm -rf binaries.tar.gz /opt/binaries
 
 curl https://raw.githubusercontent.com/HXHGTS/KMSServer/main/vlmcsd-x64-musl.service > /etc/systemd/system/vlmcsd-x64-musl.service
 

@@ -14,6 +14,10 @@ rm -rf binaries.tar.gz
 
 cd /opt/binaries/Linux/intel/static && ./vlmcsd-x64-musl-static
 
-clear
+curl https://raw.githubusercontent.com/HXHGTS/KMSServer/main/vlmcsd-x64-musl.service > /etc/systemd/system/vlmcsd-x64-musl.service
+
+systemctl daemon-reload
+
+systemctl start vlmcsd-x64-musl
 
 echo "KMS服务器已安装！"

@@ -12,7 +12,7 @@ echo "正在下载vlmcsd. . ."
 
 wget https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz -O /opt/binaries.tar.gz
 
-echo "正在安装AdGuardHome DNS服务器. . ."
+echo "正在安装vlmcsd. . ."
 
 cd /opt
 
@@ -30,4 +30,4 @@ systemctl enable vlmcsd-x64-musl
 
 systemctl start vlmcsd-x64-musl
 
-echo "KMS服务器已安装！"
+echo "vlmcsd已安装！"

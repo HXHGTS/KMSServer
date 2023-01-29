@@ -10,6 +10,8 @@ rm -rf /opt/binaries
 
 echo "正在下载vlmcsd. . ."
 
+apt install wget tar -y
+
 wget https://github.com/Wind4/vlmcsd/releases/download/svn1113/binaries.tar.gz -O /opt/binaries.tar.gz
 
 echo "正在安装vlmcsd. . ."
